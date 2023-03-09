@@ -42,7 +42,7 @@ void readStudentsData(Students students[]) {
             >> students[i].markInf
             >> students[i].markPhysics;
         students[i].rating = (students[i].markMath + students[i].markInf + students[i].markPhysics) / 3.0;
-        inputFile >> date.year >> date.month >> date.day;
+        inputFile >> date.day >> date.month >> date.year;
         students[i].date = date;
     }
 
@@ -50,30 +50,21 @@ void readStudentsData(Students students[]) {
 }
 
 
-//void printStudentsData(Passenger Students[]) {
-//    for (int i = 0; i < SIZE; i++) {
-//        cout << "Код білета: " << Students[i].ticketCode << endl;
-//        cout << "Прізвище пасажира: " << Students[i].lastName << endl;
-//        cout << "Кількість речей багажу: " << Students[i].luggageCount << endl;
-//        cout << "Загальна вага багажу: " << Students[i].luggageWeight << "кг" << endl;
-//        cout << "Дата: " << Students[i].date.day << "." << Students[i].date.month << "." << Students[i].date.year << endl;
-//        cout << endl;
-//    }
-//}
+
 void printStudentsData(Students students[]) {
-    cout << left << setw(13) << "Номер заліковки"
-        << setw(20) << "Прізвище"
-        << setw(18) << "Оцінка з математики"
-        << setw(18) << "Оцінка з інформатики"
-        << setw(12) << "Оцінка з фізики"
-        << setw(12) << "Рейтинг"
-        << setw(12) << "Дата приїзду" << endl << endl;
+    cout << left << setw(18) << "Номер заліковки"
+        << setw(15) << "Прізвище"
+        << setw(21) << "Оцінка з математики"
+        << setw(22) << "Оцінка з інформатики"
+        << setw(18) << "Оцінка з фізики"
+        << setw(18) << "Рейтинговий бал"
+        << setw(15) << "Дата народження" << endl<<endl<<endl;
         
     for (int i = 0; i < SIZE; i++) {
-        cout << left << setw(13) << students[i].treatmentCode
-            << setw(20) << students[i].lastName
-            << setw(18) << students[i].markMath
-            << setw(18) << students[i].markInf
+        cout << left << setw(18) << students[i].treatmentCode
+            << setw(15) << students[i].lastName
+            << setw(21) << students[i].markMath
+            << setw(22) << students[i].markInf
             << setw(18) << students[i].markPhysics
             << setw(18) << students[i].rating;
         cout << right << setw(2) << setfill('0') << students[i].date.day << "."
